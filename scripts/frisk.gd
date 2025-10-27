@@ -6,6 +6,8 @@ var look = "right" # "left", "right", "up", "down"
 var sprite_size = Vector2(20, 30)
 var can_move = true 
 
+
+
 func _ready() -> void:
 	#permet de récupérer la taille de l'écran 
 	screen_size = get_viewport_rect().size

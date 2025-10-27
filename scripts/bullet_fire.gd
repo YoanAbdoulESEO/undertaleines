@@ -9,3 +9,7 @@ func _physics_process(delta: float) -> void:
 	# Optionnel : auto-destruction hors écran
 	if not get_viewport_rect().has_point(global_position):
 		queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

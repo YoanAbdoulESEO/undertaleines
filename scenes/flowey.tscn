@@ -96,10 +96,9 @@ script = ExtResource("1_y3n7o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ekh40")
-animation = &"fuite"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_y3n7o")
 
 [node name="Area2D" type="Area2D" parent="."]

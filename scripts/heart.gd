@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 var speed = 100
 
+@export var pv_max = 20
+@export var pv_actual = 20
+
 func _physics_process(delta: float) -> void:
 		
 	velocity = Vector2.ZERO
@@ -21,3 +24,12 @@ func _physics_process(delta: float) -> void:
 	
 	#gère les déplacements selon l'attribut velocity
 	move_and_slide()
+
+func take_damage(damage):
+	pv_actual -= damage
+	if pv_actual < 0:
+		pv_actual = 0 
+	if pv_actual == 0: 
+		hide()
+	
+	get_parent().get_node("LifeBar/Life").size.x = pv_actual * 112 / 20
