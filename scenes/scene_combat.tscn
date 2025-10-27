@@ -563,3 +563,4 @@ position = Vector2(336, 48)
 rotation = 1.5707964
 
 [connection signal="timeout" from="Boss1/AttackTimer" to="Boss1" method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Boss2/AttackTimer" to="Boss2" method="_on_attack_timer_timeout"]

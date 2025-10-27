@@ -43,5 +43,27 @@ func bruh2() -> void:
 		$AnimatedSprite2D.animation = "idle"
 
 
+
+
+func _on_attack_timer_timeout() -> void:
+	var bullet = bullet_scene.instantiate()
+	
+	var spawn_location = get_parent().get_node("SpawnBoss2/SpawnBoss2Location")
+	spawn_location.progress_ratio = randf()
+	
+	bullet.position = spawn_location.position
+	
+	get_parent().add_child(bullet)
+	
+	bullet.direction = bullet_direction.normalized()
+
+	bullet_number += 1
+	
+	if bullet_number >= 10:
+		$AttackTimer.stop()
+		$AnimatedSprite2D.animation = "idle"
+
+
 func _on_animated_sprite_2d_animation_looped() -> void:
-	pass # Replace with function body.
+	if $AnimatedSprite2D.animation == "attack_1" or $AnimatedSprite2D.animation == "attack_2":
+		$AnimatedSprite2D.animation = "idle"
