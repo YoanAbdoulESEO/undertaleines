@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://c00oqyxspr70m"]
+
+[ext_resource type="Script" uid="uid://dicom2ovfxgw0" path="res://scripts/dialog.gd" id="1_oo0fn"]
+[ext_resource type="FontFile" uid="uid://cup4q5jgwi5np" path="res://assets/fonts/DeterminationSansWebRegular-369X.ttf" id="2_5ysmq"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Dialog" type="CanvasGroup" parent="."]
+visible = false
+script = ExtResource("1_oo0fn")
+
+[node name="Contour" type="ColorRect" parent="Dialog"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 85.5
+offset_top = 138.0
+offset_right = 346.5
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Fond" type="ColorRect" parent="Dialog"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 88.5
+offset_top = 140.0
+offset_right = 343.5
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Texte" type="Label" parent="Dialog"]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 97.5
+offset_top = 146.0
+offset_right = 334.5
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_5ysmq")
+theme_override_font_sizes/font_size = 18
+text = "Un message de texte. 
+Un message de texte. 
+Un message de texte. "
+autowrap_mode = 3

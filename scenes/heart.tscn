@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://6qsqx2rdufyg"]
+
+[ext_resource type="Texture2D" uid="uid://c3wee4t6pexi4" path="res://assets/sprites/human_soul.png" id="1_v30as"]
+[ext_resource type="Script" uid="uid://pnbu7tmqyimw" path="res://scripts/heart.gd" id="1_ycbwg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycbwg"]
+atlas = ExtResource("1_v30as")
+region = Rect2(5, 74, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krgnv"]
+atlas = ExtResource("1_v30as")
+region = Rect2(5, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_txm48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycbwg")
+}],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krgnv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nnyc"]
+size = Vector2(16, 16)
+
+[node name="Heart" type="CharacterBody2D"]
+script = ExtResource("1_ycbwg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_txm48")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8nnyc")
