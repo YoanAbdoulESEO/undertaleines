@@ -12,4 +12,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.name == "Heart":  
+		body.take_damage(1)
