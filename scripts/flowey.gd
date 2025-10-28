@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var dialog_texts = ["Howdy Vava !", "Comme on se retrouve...", "Je te rassure, je ne te ferai aucun mal...", "Mais à Ness je ne peux rien te promettre...", "Je crois que le royaume voisin l'a kidnappé...", "Bon courage pour la retrouver nyehehe (pas ma réplique mais tkt)"]
+@export var dialog_texts = ["Howdy Vava !", "Comme on se retrouve...", "Je te rassure, je ne te ferai aucun mal...", "Mais à Ness, je ne peux rien lui promettre...", "Je crois que le royaume voisin l'a kidnappée...", "Bon courage pour la retrouver nyehehe (pas ma réplique mais tkt)"]
 var player_in_range = false
 var can_dialog = true
 
