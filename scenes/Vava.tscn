@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3a2flwirc3vw"]
+
+[ext_resource type="Script" uid="uid://fqtn4va2t06n" path="res://scripts/frisk.gd" id="1_orj38"]
+[ext_resource type="Texture2D" uid="uid://c28hkjg3e0y6k" path="res://assets/sprites/rin_main_flaten/rin_main_flaten-Sheet.png" id="2_18j0u"]
+[ext_resource type="Texture2D" uid="uid://6knakqfxvjc2" path="res://assets/sprites/rin_main_flaten/rin_main_flaten-Sheet reversed.png" id="3_eex0w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv2xk"]
+atlas = ExtResource("2_18j0u")
+region = Rect2(259, 35, 37, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yeae"]
+atlas = ExtResource("2_18j0u")
+region = Rect2(148, 35, 37, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4hlh"]
+atlas = ExtResource("2_18j0u")
+region = Rect2(37, 35, 37, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5d7cm"]
+atlas = ExtResource("3_eex0w")
+region = Rect2(710, 35, 37, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfhkl"]
+atlas = ExtResource("3_eex0w")
+region = Rect2(821, 35, 37, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylbrs"]
+atlas = ExtResource("3_eex0w")
+region = Rect2(932, 35, 37, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tii80"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv2xk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yeae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4hlh")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5d7cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfhkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylbrs")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwcsg"]
+size = Vector2(27, 30)
+
+[node name="Vava" type="CharacterBody2D"]
+script = ExtResource("1_orj38")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_tii80")
+animation = &"move_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_jwcsg")
