@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwrsswejsux34"]
+
+[ext_resource type="Script" uid="uid://ce6bm1t8ehk3w" path="res://scripts/flowey.gd" id="1_upjoh"]
+[ext_resource type="Texture2D" uid="uid://b4d1ctcxwlpai" path="res://assets/sprites/deathslime_main_flaten/deathslime_main_flaten-Sheet.png" id="2_t8ibc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yey7"]
+atlas = ExtResource("2_t8ibc")
+region = Rect2(42, 35, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrv4v"]
+atlas = ExtResource("2_t8ibc")
+region = Rect2(153, 35, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l53dw"]
+atlas = ExtResource("2_t8ibc")
+region = Rect2(264, 35, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goxai"]
+atlas = ExtResource("2_t8ibc")
+region = Rect2(375, 35, 32, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ma1j0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yey7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrv4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l53dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goxai")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3n7o"]
+size = Vector2(29, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3afrt"]
+size = Vector2(35, 35)
+
+[node name="garde deathslime 1" type="StaticBody2D"]
+script = ExtResource("1_upjoh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ma1j0")
+animation = &"new_animation"
+frame = 1
+frame_progress = 0.74458563
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_y3n7o")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_3afrt")

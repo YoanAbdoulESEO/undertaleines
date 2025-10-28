@@ -60,7 +60,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jwcsg"]
-size = Vector2(27, 30)
+size = Vector2(30, 28)
 
 [node name="Vava" type="CharacterBody2D"]
 script = ExtResource("1_orj38")
@@ -69,8 +69,10 @@ script = ExtResource("1_orj38")
 texture_filter = 1
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_tii80")
-animation = &"move_left"
+animation = &"move_right"
+frame = 1
+frame_progress = 0.18749766
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, 0)
+position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_jwcsg")
