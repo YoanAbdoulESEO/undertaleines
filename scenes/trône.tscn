@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpff3mdhpa5iv"]
+
+[ext_resource type="Script" uid="uid://ce6bm1t8ehk3w" path="res://scripts/flowey.gd" id="1_6xsy8"]
+[ext_resource type="Texture2D" uid="uid://d1mpmfg8tqc5o" path="res://assets/sprites/PC___Computer_-_Undertale_-_Backgrounds_-_Asgore_s_Castle-removebg-preview.png" id="2_6xsy8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0cbr"]
+atlas = ExtResource("2_6xsy8")
+region = Rect2(1, 0, 38, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ma1j0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0cbr")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3n7o"]
+size = Vector2(60, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3afrt"]
+size = Vector2(63, 102)
+
+[node name="trône" type="StaticBody2D"]
+script = ExtResource("1_6xsy8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -2.5)
+scale = Vector2(1.6, 1.4800001)
+sprite_frames = SubResource("SpriteFrames_ma1j0")
+animation = &"new_animation_1"
+frame_progress = 0.90207946
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_y3n7o")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -3)
+shape = SubResource("RectangleShape2D_3afrt")
